@@ -6,9 +6,7 @@ from time import sleep as sl
 import matplotlib
 import main
 
-intents = discord.Intents.default()
-intents.message_content = True
-bot = discord.Bot(intents=intents, debug_guilds=[1025370799386939444])
+bot = discord.Bot(intents=discord.Intents.all(), debug_guilds=[1025370799386939444])
 refreshing = False
 pts = 0
 
