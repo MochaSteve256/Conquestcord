@@ -4,7 +4,7 @@ import discord
 import threading
 from time import sleep as sl
 #import matplotlib
-import main
+import functions
 
 bot = discord.Bot(intents=discord.Intents.all(), debug_guilds=[1025370799386939444])
 refreshing = False
@@ -18,16 +18,16 @@ async def on_ready():
 #all slash commands
 @bot.slash_command(description="Check KANHNI Clan Stats")
 async def kanhni(ctx):
-    d = main.get_clan_output("KANHNI")
-    response = "Clan: " + d[1] + "\nPlace: " + d[0] + "\nPoints: " + d[2] + "\nInformation from " + main.shaped_list[0].replace("Clan Leaderboard ", "")
+    d = functions.get_clan_output("KANHNI")
+    response = "Clan: " + d[1] + "\nPlace: " + d[0] + "\nPoints: " + d[2] + "\nInformation from " + functions.shaped_list[0].replace("Clan Leaderboard ", "")
     await ctx.respond(response)
 
 @bot.slash_command(description="Check Any Clan's Stats")
 async def checkclan(ctx, clan: str):
-    clan_infos = main.get_clan_output(clan)
+    clan_infos = functions.get_clan_output(clan)
 
     if clan_infos != "not existing" and clan_infos != "error" and clan_infos != False:
-        response = "Clan: " + clan_infos[1] + "\nPlace: " + clan_infos[0] + "\nPoints: " + clan_infos[2] + "\nInformation from " + main.shaped_list[0].replace("Clan Leaderboard ", "")
+        response = "Clan: " + clan_infos[1] + "\nPlace: " + clan_infos[0] + "\nPoints: " + clan_infos[2] + "\nInformation from " + functions.shaped_list[0].replace("Clan Leaderboard ", "")
         await ctx.respond(response)
     elif clan_infos == "error":
         await ctx.respond("There was an error downloading the list of clans, please try again later.")
@@ -40,10 +40,10 @@ async def checkclan(ctx, clan: str):
 
 @bot.slash_command(description="Check Stats Of A Username")
 async def checkplayer(ctx, player: str):
-    player_infos = main.get_player_output(player)
+    player_infos = functions.get_player_output(player)
 
     if player_infos != "not existing" and player_infos != "error" and player_infos != False:
-        response = "Player: " + player_infos[1] + "\nPlace: " + player_infos[0] + "\nPoints: " + player_infos[2] + "\nInformation from " + main.shaped_list[0].replace("Clan Leaderboard ", "")
+        response = "Player: " + player_infos[1] + "\nPlace: " + player_infos[0] + "\nPoints: " + player_infos[2] + "\nInformation from " + functions.shaped_list[0].replace("Clan Leaderboard ", "")
         await ctx.respond(response)
     elif player_infos == "error":
         await ctx.respond("There was an error downloading the list of players, please try again later.")
