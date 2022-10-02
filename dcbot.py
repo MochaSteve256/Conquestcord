@@ -40,10 +40,10 @@ async def checkclan(ctx, clan: str):
 
 @bot.slash_command(description="Check Stats Of A Username")
 async def checkplayer(ctx, player: str):
-    player_infos = main.get_clan_output(player)
+    player_infos = main.get_player_output(player)
 
     if player_infos != "not existing" and player_infos != "error" and player_infos != False:
-        response = "Clan: " + player_infos[1] + "\nPlace: " + player_infos[0] + "\nPoints: " + player_infos[2] + "\nInformation from " + main.shaped_list[0].replace("Clan Leaderboard ", "")
+        response = "Player: " + player_infos[1] + "\nPlace: " + player_infos[0] + "\nPoints: " + player_infos[2] + "\nInformation from " + main.shaped_list[0].replace("Clan Leaderboard ", "")
         await ctx.respond(response)
     elif player_infos == "error":
         await ctx.respond("There was an error downloading the list of players, please try again later.")
