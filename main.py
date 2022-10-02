@@ -95,6 +95,7 @@ def shape_info(info):
 
 
 def get_clan_output(clan):
+    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
     info = get_info_clan(clan)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -112,6 +113,7 @@ def get_clan_output(clan):
     
 
 def get_player_output(player):
+    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/players', verbose=True)
     info = get_info_player(player)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -127,10 +129,10 @@ def get_player_output(player):
         return False
 
 
-runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
 
 
-runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/players', verbose=True)
+
+
 
 
 
