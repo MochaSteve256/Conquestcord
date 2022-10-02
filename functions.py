@@ -134,4 +134,4 @@ runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.
 
 
 
-print("All function started successfully    (functions.py)")   #always the last line ya
+print("All function started successfully    (functions.py)")   #always the last line
