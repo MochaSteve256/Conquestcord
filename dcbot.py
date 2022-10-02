@@ -3,12 +3,10 @@ from re import M
 import discord
 import threading
 from time import sleep as sl
-import matplotlib
+#import matplotlib
 import main
 
-intents = discord.Intents.default()
-intents.message_content = True
-bot = discord.Bot(intents=intents, debug_guilds=[1025370799386939444])
+bot = discord.Bot(intents=discord.Intents.all(), debug_guilds=[1025370799386939444])
 refreshing = False
 pts = 0
 
@@ -42,10 +40,10 @@ async def checkclan(ctx, clan: str):
 
 @bot.slash_command(description="Check Stats Of A Username")
 async def checkplayer(ctx, player: str):
-    player_infos = main.get_clan_output(player)
+    player_infos = main.get_player_output(player)
 
     if player_infos != "not existing" and player_infos != "error" and player_infos != False:
-        response = "Clan: " + player_infos[1] + "\nPlace: " + player_infos[0] + "\nPoints: " + player_infos[2] + "\nInformation from " + main.shaped_list[0].replace("Clan Leaderboard ", "")
+        response = "Player: " + player_infos[1] + "\nPlace: " + player_infos[0] + "\nPoints: " + player_infos[2] + "\nInformation from " + main.shaped_list[0].replace("Clan Leaderboard ", "")
         await ctx.respond(response)
     elif player_infos == "error":
         await ctx.respond("There was an error downloading the list of players, please try again later.")
@@ -68,4 +66,4 @@ async def clanlist(ctx):
 async def diagram(ctx):
     await ctx.respond(file=discord.File("save.png"))
 
-bot.run("MTAyNTM4NDA2MjMzODIyMDA4NA.GuwWfU.D9I0NXhyhYGQBQjB2ZhVbNQPv7qK_bp0t3dMU4")
+bot.run("MTAyNTM4NDA2MjMzODIyMDA4NA.GHdxWo.66hGOYsNRMLnrFAvnq-oNdvKrQlHyKNdvzsACg")

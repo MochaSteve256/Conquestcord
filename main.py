@@ -73,10 +73,10 @@ def get_info_player(player):
     # check if in any element of the list the desired clan is contained
     for line in shaped_list1:
         if player.upper() in line:
-            f1.close()
+            player_list.close()
             return line
 
-    f1.close()
+    player_list.close()
     return "not existing"
 
 
@@ -95,6 +95,8 @@ def shape_info(info):
 
 
 def get_clan_output(clan):
+    os.remove("clans")
+    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
     info = get_info_clan(clan)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -104,7 +106,7 @@ def get_clan_output(clan):
         print("Someone tried to check the clan " + clan + ", but there was an error downloading the list of clans.")
         return "error"
     elif info == "not existing":
-        print("Someone tried to check the clan " + clan + ", but this clan does not exist.)
+        print("Someone tried to check the clan " + clan + ", but this clan does not exist.")
         return "not existing"
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the clan " + clan)
@@ -112,6 +114,8 @@ def get_clan_output(clan):
     
 
 def get_player_output(player):
+    os.remove("players")
+    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/players', verbose=True)
     info = get_info_player(player)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -120,17 +124,17 @@ def get_player_output(player):
         print("Someone tried to check the player " + player + ", but there was an error downloading the list of players.")
         return "error"
     elif info == "not existing":
-        print("Someone tried to check the player " + player + ", but this player does not exist.)
+        print("Someone tried to check the player " + player + ", but this player does not exist.")
         return "not existing"
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the player " + player)
         return False
 
 
-runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
 
 
-runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/players', verbose=True)
+
+
 
 
 
