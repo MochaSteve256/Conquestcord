@@ -4,13 +4,13 @@ import subprocess
 if os.path.exists("clans"):
     os.remove("clans")
 else:
-    print("The file does not exist")
+    print("The file clans does not exist")
 
 
 if os.path.exists("players"):
     os.remove("players")
 else:
-    print("The file does not exist")
+    print("The file players does not exist")
 
 
 def runcmd(cmd, verbose=False, *args, **kwargs):
@@ -33,7 +33,6 @@ def get_info_clan(clan):
 
     if "data-adblockkey" in lines[0]:
         f.close()
-        print("There was an error downloading the list of clans, please try again later.")
         return "error"
 
     # get rid of \n at end of every element of the list
@@ -51,17 +50,15 @@ def get_info_clan(clan):
             return line
 
     f.close()
-    print("Some user requested a player that doesn't exist. Infromation from " + shaped_list[0])
     return "not existing"
 
 
 def get_info_player(player):
-    with open("players", "r", encoding="utf-8") as f1:
-        lines2 = f1.readlines() 
+    with open("players", "r", encoding="utf-8") as player_list:
+        lines2 = player_list.readlines() 
 
     if "data-adblockkey" in lines2[0]:
-        f1.close()
-        print("There was an error downloading the list of players.")
+        player_list.close()
         return "error"
 
     # get rid of \n at end of every element of the list
@@ -79,7 +76,6 @@ def get_info_player(player):
             return line
 
     f1.close()
-    print("There doesn't exist a player with this name yet! Information from " + shaped_list1[0])
     return "not existing"
 
 
@@ -104,11 +100,13 @@ def get_clan_output(clan):
         print("Someone checked " + clan)
         return shaped_info
     elif info == "error":
-        print("Someone tried to check " + clan + ", but there was an error downloading the list of clans.")
+        print("Someone tried to check the clan " + clan + ", but there was an error downloading the list of clans.")
         return "error"
     elif info == "not existing":
+        print("Someone tried to check the clan " + clan + ", but this clan does not exist.)
         return "not existing"
     else:
+        print("ALERT: There has been an UNKNOWN ERROR while trying to check the clan " + clan)
         return False
     
 
@@ -118,10 +116,13 @@ def get_player_output(player):
         shaped_info = shape_info(info)
         return shaped_info
     elif info == "error":
+        print("Someone tried to check the player " + player + ", but there was an error downloading the list of players.")
         return "error"
     elif info == "not existing":
+        print("Someone tried to check the player " + player + ", but this player does not exist.)
         return "not existing"
     else:
+        print("ALERT: There has been an UNKNOWN ERROR while trying to check the player " + player)
         return False
 
 
