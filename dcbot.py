@@ -1,21 +1,21 @@
 #import necessary libraries
 from re import M
-import pycord
+import discord
 import threading
 from time import sleep as sl
 import matplotlib
 import main
 
-intents = pycord.Intents.default()
+intents = discord.Intents.default()
 intents.message_content = True
-bot = pycord.Bot(intents=intents, debug_guilds=[1025370799386939444])
+bot = discord.Bot(intents=intents, debug_guilds=[1025370799386939444])
 refreshing = False
 pts = 0
 
 @bot.event
 async def on_ready():
     print(f'Sucessfully logged in as {bot.user}')
-    await bot.change_presence(activity=pycord.Game("Territorial.io"))
+    await bot.change_presence(activity=discord.Game("Territorial.io"))
 
 #all slash commands
 @bot.slash_command(description="Check KANHNI Clan Stats")
@@ -66,6 +66,6 @@ async def clanlist(ctx):
 
 @bot.slash_command(description="Generate Diagram")
 async def diagram(ctx):
-    await ctx.respond(file=pycord.File("save.png"))
+    await ctx.respond(file=discord.File("save.png"))
 
 bot.run("MTAyNTM4NDA2MjMzODIyMDA4NA.GuwWfU.D9I0NXhyhYGQBQjB2ZhVbNQPv7qK_bp0t3dMU4")
