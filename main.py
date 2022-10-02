@@ -72,7 +72,7 @@ def get_info_player(player):
 
     # check if in any element of the list the desired clan is contained
     for line in shaped_list1:
-        if player.upper() in line:
+        if player in line:
             player_list.close()
             return line
 
