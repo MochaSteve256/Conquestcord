@@ -73,10 +73,10 @@ def get_info_player(player):
     # check if in any element of the list the desired clan is contained
     for line in shaped_list1:
         if player.upper() in line:
-            f1.close()
+            player_list.close()
             return line
 
-    f1.close()
+    player_list.close()
     return "not existing"
 
 
@@ -104,7 +104,7 @@ def get_clan_output(clan):
         print("Someone tried to check the clan " + clan + ", but there was an error downloading the list of clans.")
         return "error"
     elif info == "not existing":
-        print("Someone tried to check the clan " + clan + ", but this clan does not exist.)
+        print("Someone tried to check the clan " + clan + ", but this clan does not exist.")
         return "not existing"
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the clan " + clan)
@@ -120,7 +120,7 @@ def get_player_output(player):
         print("Someone tried to check the player " + player + ", but there was an error downloading the list of players.")
         return "error"
     elif info == "not existing":
-        print("Someone tried to check the player " + player + ", but this player does not exist.)
+        print("Someone tried to check the player " + player + ", but this player does not exist.")
         return "not existing"
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the player " + player)
