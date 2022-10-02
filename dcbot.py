@@ -66,4 +66,4 @@ async def clanlist(ctx):
 async def diagram(ctx):
     await ctx.respond(file=discord.File("save.png"))
 
-bot.run("MTAyNTM4NDA2MjMzODIyMDA4NA.GuwWfU.D9I0NXhyhYGQBQjB2ZhVbNQPv7qK_bp0t3dMU4")
+bot.run("MTAyNTM4NDA2MjMzODIyMDA4NA.GHdxWo.66hGOYsNRMLnrFAvnq-oNdvKrQlHyKNdvzsACg")
