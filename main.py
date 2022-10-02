@@ -1,16 +1,17 @@
 import os
 import subprocess
 
-if os.path.exists("clans"):
-    os.remove("clans")
-else:
-    print("The file clans does not exist")
 
-
-if os.path.exists("players"):
-    os.remove("players")
-else:
-    print("The file players does not exist")
+def download_lists():
+    if os.path.exists("clans"):
+        os.remove("clans")
+    else:
+        print("The file clans does not exist")
+        
+    if os.path.exists("players"):
+        os.remove("players")
+    else:
+        print("The file players does not exist")
 
 
 def runcmd(cmd, verbose=False, *args, **kwargs):
