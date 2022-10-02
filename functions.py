@@ -56,16 +56,16 @@ def get_info_clan(clan):
 
 def get_info_player(player):
     with open("players", "r", encoding="utf-8") as player_list:
-        lines2 = player_list.readlines() 
+        lines = player_list.readlines() 
 
-    if "data-adblockkey" in lines2[0]:
+    if "data-adblockkey" in lines[0]:
         player_list.close()
         return "error"
 
     # get rid of \n at end of every element of the list
     global shaped_list1
     shaped_list1 = []
-    for line in lines2:
+    for line in lines:
         line = line.replace("\n", "")
         line = line.replace(",", "")
         shaped_list1.append(line)
@@ -95,6 +95,7 @@ def shape_info(info):
 
 
 def get_clan_output(clan):
+    download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_clan(clan)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -112,6 +113,7 @@ def get_clan_output(clan):
     
 
 def get_player_output(player):
+    download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_player(player)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
