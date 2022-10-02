@@ -3,7 +3,7 @@ from re import M
 import discord
 import threading
 from time import sleep as sl
-import matplotlib
+#import matplotlib
 import main
 
 bot = discord.Bot(intents=discord.Intents.all(), debug_guilds=[1025370799386939444])
