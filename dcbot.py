@@ -5,7 +5,7 @@ import threading
 from time import sleep as sl
 #import matplotlib
 import functions
-
+functions.download_lists()
 bot = discord.Bot(intents=discord.Intents.all(), debug_guilds=[1025370799386939444])
 refreshing = False
 pts = 0
