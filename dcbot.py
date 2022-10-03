@@ -12,7 +12,7 @@ pts = 0
 
 @bot.event
 async def on_ready():
-    print(f'Sucessfully logged in as {bot.user}')
+    print(f'Successfully logged in as {bot.user}')
     await bot.change_presence(activity=discord.Game("Territorial.io"))
 
 #all slash commands

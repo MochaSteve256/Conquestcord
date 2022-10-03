@@ -45,7 +45,6 @@ def get_info_clan(clan):
         line = line.replace("\n", "")
         line = line.replace(",", "")
         shaped_list.append(line)
-    print(shaped_list)
     # check if in any element of the list the desired clan is contained
     for line in shaped_list:
         if clan.upper() in line:
