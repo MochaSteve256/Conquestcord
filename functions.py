@@ -45,6 +45,7 @@ def get_clan_list():
         line = line.replace("\n", "")
         line = line.replace(",", "")
         shaped_list.append(line)
+    return shaped_list
 # check if in any element of the list the desired clan is contained
 #for line in shaped_list:
 #    if clan.upper() in line:
@@ -69,6 +70,7 @@ def get_player_list():
         line = line.replace("\n", "")
         line = line.replace(",", "")
         shaped_list1.append(line)
+    return shaped_list1
 
 # check if in any element of the list the desired player is contained
 #for line in shaped_list1:
@@ -92,7 +94,7 @@ def shape_info(info):
             temp = ""
     return output
 
-
+"""
 def get_clan_output(clan):
     download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_clan(clan)
@@ -109,8 +111,8 @@ def get_clan_output(clan):
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the clan " + clan)
         return False
-    
-
+"""   
+"""
 def get_player_output(player):
     download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_player(player)
@@ -126,7 +128,7 @@ def get_player_output(player):
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the player " + player)
         return False
-
+"""
 
 
 

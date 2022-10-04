@@ -68,7 +68,7 @@ async def diagram(ctx):
     await ctx.respond(file=discord.File("save.png"))
 try:
     bot.run("MTAyNTM4NDA2MjMzODIyMDA4NA.GHdxWo.66hGOYsNRMLnrFAvnq-oNdvKrQlHyKNdvzsACg")
-except KeyboardInterrupt:
+except Exception as e:
     if os.path.exists("clans"):
         os.remove("clans")
     else:
@@ -76,3 +76,5 @@ except KeyboardInterrupt:
         
     if os.path.exists("players"):
         os.remove("players")
+    print("Some error occurred:")
+    print(e)
