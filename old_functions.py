@@ -30,7 +30,7 @@ def runcmd(cmd, verbose=False, *args, **kwargs):
     pass
 
 
-def get_clan_list():
+def get_info_clan(clan):
     with open("clans", "r", encoding="utf-8") as f:
         lines = f.readlines() 
 
@@ -45,16 +45,17 @@ def get_clan_list():
         line = line.replace("\n", "")
         line = line.replace(",", "")
         shaped_list.append(line)
-# check if in any element of the list the desired clan is contained
-#for line in shaped_list:
-#    if clan.upper() in line:
-#        f.close()
-#        return line
-#f.close()
-#return "not existing"
+    # check if in any element of the list the desired clan is contained
+    for line in shaped_list:
+        if clan.upper() in line:
+            f.close()
+            return line
+
+    f.close()
+    return "not existing"
 
 
-def get_player_list():
+def get_info_player(player):
     with open("players", "r", encoding="utf-8") as player_list:
         lines = player_list.readlines() 
 
@@ -70,13 +71,14 @@ def get_player_list():
         line = line.replace(",", "")
         shaped_list1.append(line)
 
-# check if in any element of the list the desired player is contained
-#for line in shaped_list1:
-#    if player in line:
-#        player_list.close()
-#        return line
-#player_list.close()
-#return "not existing"
+    # check if in any element of the list the desired clan is contained
+    for line in shaped_list1:
+        if player in line:
+            player_list.close()
+            return line
+
+    player_list.close()
+    return "not existing"
 
 
 def shape_info(info):
