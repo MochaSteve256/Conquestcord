@@ -5,6 +5,7 @@ import threading
 from time import sleep as sl
 #import matplotlib
 import functions
+import os
 
 bot = discord.Bot(intents=discord.Intents.all(), debug_guilds=[1025370799386939444])
 refreshing = False
@@ -65,5 +66,13 @@ async def clanlist(ctx):
 @bot.slash_command(description="Generate Diagram")
 async def diagram(ctx):
     await ctx.respond(file=discord.File("save.png"))
-
-bot.run("MTAyNTM4NDA2MjMzODIyMDA4NA.GHdxWo.66hGOYsNRMLnrFAvnq-oNdvKrQlHyKNdvzsACg")
+try:
+    bot.run("MTAyNTM4NDA2MjMzODIyMDA4NA.GHdxWo.66hGOYsNRMLnrFAvnq-oNdvKrQlHyKNdvzsACg")
+except KeyboardInterrupt:
+    if os.path.exists("clans"):
+        os.remove("clans")
+    else:
+        print("The file clans does not exist")
+        
+    if os.path.exists("players"):
+        os.remove("players")
