@@ -20,7 +20,8 @@ all_points = 0
 for value in values:
     try:
         all_points = all_points + float(value)
+        print(value)
     except Exception as e:
         print(e)
         pass
-print(all_points)
+print(int(all_points))
