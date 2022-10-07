@@ -1,9 +1,6 @@
-from itertools import count
-
-
 with open("clans", "r", encoding="utf-8") as f:
     content = f.readlines()
-    f.close
+    f.close()
 
 shaped_list = []
 for line in content:
@@ -23,6 +20,7 @@ for element in shaped_list:
             count_of_spaces += 1
             if count_of_spaces > 1:
                 values.append(temp)
+                temp = ""
             
 
 
