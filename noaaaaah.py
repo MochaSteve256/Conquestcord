@@ -14,7 +14,6 @@ for element in shaped_list:
     position = element.find(".")
     position -= 1
     values.append(element[position:])
-print(values)
 
 all_points = 0
 for value in values:
