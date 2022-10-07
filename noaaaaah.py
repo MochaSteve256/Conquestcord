@@ -25,11 +25,14 @@ for element in shaped_list:
                 count_of_commata += 1
 
 all_points = 0
+fails = []
 for value in values:
     try:
         all_points = all_points + float(value)
         print("Sucess", value)
     except Exception as e:
         print(e)
+        fails.append(value)
         pass
+print(fails)
 print(all_points)
