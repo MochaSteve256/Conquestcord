@@ -11,19 +11,9 @@ for line in content:
 
 values = []
 for element in shaped_list:
-    count_of_spaces = 0
-    temp = ""
-    for char in element:
-        if char != " ":
-            temp = temp.join(char)
-        else:
-            count_of_spaces += 1
-            if count_of_spaces > 1:
-                values.append(temp)
-                temp = ""
-            
-
-
+    position = element.find(".")
+    position -= 1
+    values.append(element[position:])
 
 all_points = 0
 for value in values:
