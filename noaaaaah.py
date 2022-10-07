@@ -16,11 +16,14 @@ for element in shaped_list:
     values.append(element[position:])
 
 all_points = 0
+fails = []
 for value in values:
     try:
         all_points = all_points + float(value)
         print("Sucess", value)
     except Exception as e:
         print(e)
+        fails.append(value)
         pass
+print(fails)
 print(all_points)
