@@ -1,12 +1,27 @@
+import functions
+
+functions.download_lists()
+
 with open("clans", "r", encoding="utf-8") as f:
     content = f.readlines()
-    f.close()
+    
 
-shaped_list = []
+new_content = []
+info_about_leaderboard = []
+number = "0123456789"
 for line in content:
+    if not functions.starts_with(line, number):
+        info_about_leaderboard.append(line)
+    else:
+        new_content.append(line)
+        
+        
+shaped_list = []
+for line in new_content:
     line = line.replace("\n", "")
     line = line + ","
     shaped_list.append(line)
+        
 
 
 values = []
@@ -37,5 +52,6 @@ for value in values:
 if fails == []:
     print("No Errors Occured")
 else:
-    print(fails)
+    print("Errors: ",fails)
 print("All Points:" ,all_points)
+print("Information from", info_about_leaderboard[0])
