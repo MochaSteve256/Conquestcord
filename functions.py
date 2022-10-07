@@ -15,7 +15,6 @@ def download_lists():
     runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
     runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/players', verbose=True)
 
-
 def runcmd(cmd, verbose=False, *args, **kwargs):
     process = subprocess.Popen(
         cmd,
@@ -93,7 +92,6 @@ def shape_info(info):
             output.append(temp)  # appends temporary variable to output as soon as space is registered
             temp = ""
     return output
-
 def get_clan_output(clan):
     download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_clan(clan)
