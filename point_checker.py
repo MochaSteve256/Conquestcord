@@ -44,7 +44,7 @@ fails = []
 for value in values:
     try:
         all_points = all_points + float(value)
-        print("Sucess", value)
+        #print("Sucess", value)
     except Exception as e:
         print(e)
         fails.append(value)
