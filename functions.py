@@ -92,18 +92,6 @@ def shape_info(info):
             output.append(temp)  # appends temporary variable to output as soon as space is registered
             temp = ""
     return output
-    
-    
-def starts_with(word, var):
-    word = list(word)
-    var = list(var)
-    for element in var:
-        if word[0] == element:
-            return True
-    return False
-    
-    
-"""
 def get_clan_output(clan):
     download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_clan(clan)
@@ -120,8 +108,8 @@ def get_clan_output(clan):
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the clan " + clan)
         return False
-"""   
-"""
+
+
 def get_player_output(player):
     download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_player(player)
@@ -137,7 +125,7 @@ def get_player_output(player):
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the player " + player)
         return False
-"""
+
 
 
 
