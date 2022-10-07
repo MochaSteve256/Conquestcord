@@ -34,5 +34,8 @@ for value in values:
         print(e)
         fails.append(value)
         pass
-print(fails)
-print(all_points)
+if fails == []:
+    print("No Errors Occured")
+else:
+    print(fails)
+print("All Points:" ,all_points)
