@@ -94,7 +94,6 @@ def shape_info(info):
             temp = ""
     return output
 
-"""
 def get_clan_output(clan):
     download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_clan(clan)
@@ -111,8 +110,8 @@ def get_clan_output(clan):
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the clan " + clan)
         return False
-"""   
-"""
+
+
 def get_player_output(player):
     download_lists()        #downloads the newest version of the clan- and playerlist
     info = get_info_player(player)
@@ -128,7 +127,7 @@ def get_player_output(player):
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the player " + player)
         return False
-"""
+
 
 
 
