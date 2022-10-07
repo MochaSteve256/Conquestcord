@@ -1,3 +1,4 @@
+from distutils.log import info
 import functions
 
 functions.download_lists()
@@ -55,3 +56,9 @@ else:
     print("Errors: ",fails)
 print("All Points:" ,all_points)
 print("Information from", info_about_leaderboard[0])
+
+f =  open("clan_points.txt", "a")
+f.write("Information from " + info_about_leaderboard[0])
+f.write("All Points: " + str(all_points) + "\n")
+f.write("\n")
+f.close()
