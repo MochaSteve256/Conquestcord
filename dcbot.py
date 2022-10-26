@@ -81,3 +81,4 @@ except Exception as e:
         os.remove("players")
     print("Some error occurred:")
     print(e)
+print("test")
