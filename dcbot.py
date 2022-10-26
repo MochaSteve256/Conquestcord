@@ -1,6 +1,7 @@
 #import necessary libraries
 from re import M
 import discord
+from discord.ext import commands
 import threading
 from time import sleep as sl
 #import matplotlib
