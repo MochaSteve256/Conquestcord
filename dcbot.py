@@ -7,7 +7,9 @@ from time import sleep as sl
 import old_functions
 import os
 
-bot = discord.Bot(intents=discord.Intents.all(), debug_guilds=[1025370799386939444, 1025358952260714576])
+intents = discord.Intents.default()
+intents.message_content = True
+bot = discord.Bot(intents=intents, debug_guilds=[1025370799386939444, 1025358952260714576])
 refreshing = False
 pts = 0
 
