@@ -10,7 +10,7 @@ import os
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = discord.Bot(intents=intents, debug_guilds=[1025370799386939444, 1025358952260714576])
+bot = discord.Bot(intents=intents)
 refreshing = False
 pts = 0
 
@@ -58,7 +58,7 @@ async def checkplayer(ctx, player: str):
     else:
         await ctx.respond("There was an unknown error. INFORM THE DEVELOPERS **IMMEADITELY**")
 
-@bot.command(description="View Clan Leaderboard")
+@bot.slash_command(description="View Clan Leaderboard")
 async def leaderboard(ctx):
     await ctx.respond("Feature not added yet.")
 
