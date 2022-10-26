@@ -57,7 +57,7 @@ async def checkplayer(ctx, player: str):
     else:
         await ctx.respond("There was an unknown error. INFORM THE DEVELOPERS **IMMEADITELY**")
 
-@bot.slash_command(description="View Clan Leaderboard")
+@bot.command(description="View Clan Leaderboard")
 async def leaderboard(ctx):
     await ctx.respond("Feature not added yet.")
 
