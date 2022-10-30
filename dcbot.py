@@ -81,3 +81,4 @@ except Exception as ex:
         os.remove("players")
     print("Some error occurred:")
     print(ex)
+#git is shit
