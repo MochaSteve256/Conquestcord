@@ -70,8 +70,8 @@ async def clanlist(ctx):
 async def diagram(ctx):
     await ctx.respond(file=discord.File("save.png"))
 try:
-    bot.run("MTAzNjMzMDIyNTE1NzUzNzc5Mg.GzlnfM.1vraCtQ5KAfvsCtBaPVQdgkmvIBiul6kE3XCGA")
-except Exception as e:
+    bot.run("MTAzNjMzMDIyNTE1NzUzNzc5Mg.GxL2Es.ccdSe7N3kOwr0b1PKL7Qc1tjWQ-TKAeYkkIGEY")
+except Exception as ex:
     if os.path.exists("clans"):
         os.remove("clans")
     else:
@@ -80,4 +80,4 @@ except Exception as e:
     if os.path.exists("players"):
         os.remove("players")
     print("Some error occurred:")
-    print(e)
+    print(ex)
