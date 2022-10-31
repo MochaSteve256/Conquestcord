@@ -69,7 +69,7 @@ async def clanlist(ctx):
 @bot.slash_command(description="Generate Diagram")
 async def diagram(ctx):
     await ctx.respond(file=discord.File("save.png"))
-    await ctx.respond("_(placeholder)_")
+    await ctx.send("_(placeholder)_")
 try:
     bot.run("MTAzNjMzMDIyNTE1NzUzNzc5Mg.GWBdhb.5uPSvhTO44gUPqx60R3m3hFiioRzPozMHnNrzs")
 except Exception as ex:
