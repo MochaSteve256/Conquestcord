@@ -1,15 +1,21 @@
 # Import Library
 
 import matplotlib.pyplot as plt
-
+from datetime import datetime
+from random import randint
 # Define Data
-
-x= [1, 2, 3, 4, 5]
-y= [2.5, 6.3, 12, 14, 2]
-
-# Plot 
-
-plt.plot(x,y,color='r')
+c = 0
+xt = []
+x = []
+y = []
+for i in range(10):
+    c+=1
+    x.append(c)
+    xt.append(datetime.now().strftime("%d-%m-%y"))
+    y.append(randint(1, 10))
+# Plot
+plt.xticks(ticks=x, labels=xt, rotation=20, size=7)
+plt.plot(x, y, color='r')
 plt.xlabel("Date/Time")
 plt.ylabel("Points")
 # Save image as png
