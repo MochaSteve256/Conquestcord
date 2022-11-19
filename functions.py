@@ -1,7 +1,9 @@
 import os
 import subprocess
-
-
+import old_functions
+import time
+from datetime import datetime
+import plotting
 def download_lists():
     if os.path.exists("clans"):
         os.remove("clans")
@@ -101,6 +103,20 @@ def starts_with(word, var):
         if word[0] == element:
             return True
     return False
+
+def graph_thread():
+    while 1:
+        global pts
+        global plc
+        global dts
+        pts = []
+        plc = []
+        dts = []
+        d = old_functions.get_clan_output("KANHNI")#gets current clan stats
+        pts.append(d[2])#points
+        plc.append(d[0])#place
+        dts.append(datetime.now().strftime("%d-%m-%y"))#date and time
+        time.sleep(5)
     
     
 """

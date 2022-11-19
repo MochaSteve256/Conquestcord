@@ -40,7 +40,7 @@ async def checkclan(ctx, clan: str):
     elif clan_infos == False:
         await ctx.respond("There has been error. Please try again later")
     else:
-        await ctx.respond("There was an unknown error. INFORM THE DEVELOPERS **IMMEADITELY**")# XD
+        await ctx.respond("There was an unknown error. INFORM THE DEVELOPERS **IMMEDIATELY**")# XD
 
 @bot.slash_command(description="Check Stats Of A Username")
 async def checkplayer(ctx, player: str):
@@ -56,7 +56,7 @@ async def checkplayer(ctx, player: str):
     elif player_infos == False:
         await ctx.respond("There has been error. Please try again later")
     else:
-        await ctx.respond("There was an unknown error. INFORM THE DEVELOPERS **IMMEADITELY**")
+        await ctx.respond("There was an unknown error. INFORM THE DEVELOPERS **IMMEDIATELY**")
 
 @bot.slash_command(description="View Clan Leaderboard")
 async def leaderboard(ctx):
