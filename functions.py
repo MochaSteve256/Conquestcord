@@ -105,7 +105,8 @@ def starts_with(word, var):
     return False
 
 def graph_thread():
-    while 1:
+    for i in range(10):
+    #while 1:
         global pts
         global plc
         global dts
@@ -116,7 +117,8 @@ def graph_thread():
         pts.append(d[2])#points
         plc.append(d[0])#place
         dts.append(datetime.now().strftime("%d-%m-%y"))#date and time
-        time.sleep(5)
+        plotting.plot(pts, plc, dts)
+        time.sleep(10)
     
     
 """
