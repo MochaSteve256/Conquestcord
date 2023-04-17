@@ -63,10 +63,13 @@ async def checkplayer(ctx, player: str):
 
 @bot.slash_command(description="View Clan Leaderboard")
 async def leaderboard(ctx, lenght: int = 10):
-    if (lenght < 1004): 
-        lenght = 1004
+    if lenght > 504: 
+        lenght = 504
     d = old_functions.get_leaderboard(int(lenght) + 4)
-    await ctx.respond(d)
+    if d == "leaderboard":
+        await ctx.respond(file=discord.File("leaderboard.txt"))
+    else:
+        await ctx.respond(d)
     print("Some checked leaderboard with lenght of " + str(lenght))
 
 @bot.slash_command(description="Clans Page")
@@ -77,16 +80,16 @@ async def clanlist(ctx):
 async def diagram(ctx):
     await ctx.respond(file=discord.File("graph.png"))
     await ctx.send("_work in progress_")
+
 try:
     bot.run("MTAzNjMzMDIyNTE1NzUzNzc5Mg.GWBdhb.5uPSvhTO44gUPqx60R3m3hFiioRzPozMHnNrzs")
 except Exception as ex:
     if os.path.exists("clans"):
         os.remove("clans")
     else:
-        print("The file clans does not exist")
+        print("The clans file does not exist")
         
     if os.path.exists("players"):
         os.remove("players")
     print("Some error occurred:")
     print(ex)
-#git is shit

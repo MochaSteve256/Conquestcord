@@ -135,11 +135,22 @@ def get_leaderboard(lenght):
     with open("clans", "r", encoding="utf-8") as f:
         lines = f.readlines()
     f.close()
-    response = ".\n"
-    for i in range(lenght):
-        line = lines[i]
-        response = response + line
-    return response
+    if lenght > 14:
+        response = "\n"
+        for i in range(lenght):
+            line = lines[i]
+            response = response + line
+        with open("leaderboard.txt", "w", encoding="utf-8") as f:
+            f.writelines(response)
+            f.close()
+            return "leaderboard"
+    
+    else:
+        response = ".\n"
+        for i in range(lenght):
+            line = lines[i]
+            response = response + line
+        return response
 
 
 
