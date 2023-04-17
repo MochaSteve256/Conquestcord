@@ -130,7 +130,16 @@ def get_player_output(player):
         return False
 
 
-
+def get_leaderboard(lenght):
+    download_lists()
+    with open("clans", "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    f.close()
+    response = ".\n"
+    for i in range(lenght):
+        line = lines[i]
+        response = response + line
+    return response
 
 
 

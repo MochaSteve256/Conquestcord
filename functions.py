@@ -119,8 +119,8 @@ def graph_thread():
         dts.append(datetime.now().strftime("%d-%m-%y"))#date and time
         plotting.plot(pts, plc, dts)
         time.sleep(10)
-    
-    
+
+
 """
 def get_clan_output(clan):
     download_lists()        #downloads the newest version of the clan- and playerlist

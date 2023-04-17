@@ -23,7 +23,10 @@ async def on_ready():
 @bot.slash_command(description="Check KANHNI Clan Stats")
 async def kanhni(ctx):
     d = old_functions.get_clan_output("KANHNI")
-    response = "Clan: " + d[1] + "\nPlace: " + d[0] + "\nPoints: " + d[2] + "\nInformation from " + old_functions.shaped_list[0].replace("Clan Leaderboard ", "")
+    if (d == "not existing"):
+        response = "The KANHNI clan is currently so bad that it has been deleted from the official clan list!!!"
+    else:
+        response = "Clan: " + d[1] + "\nPlace: " + d[0] + "\nPoints: " + d[2] + "\nInformation from " + old_functions.shaped_list[0].replace("Clan Leaderboard ", "")
     await ctx.respond(response)
 
 @bot.slash_command(description="Check Any Clan's Stats")
@@ -60,7 +63,9 @@ async def checkplayer(ctx, player: str):
 
 @bot.slash_command(description="View Clan Leaderboard")
 async def leaderboard(ctx):
-    await ctx.respond("Feature not added yet.")
+    d = old_functions.get_leaderboard(24)
+    await ctx.respond(d)
+    print("Some checked leaderboard with lenght of")
 
 @bot.slash_command(description="Clans Page")
 async def clanlist(ctx):
@@ -69,7 +74,7 @@ async def clanlist(ctx):
 @bot.slash_command(description="Generate Diagram")
 async def diagram(ctx):
     await ctx.respond(file=discord.File("graph.png"))
-    await ctx.send("_(placeholder)_")
+    await ctx.send("_work in progress_")
 try:
     bot.run("MTAzNjMzMDIyNTE1NzUzNzc5Mg.GWBdhb.5uPSvhTO44gUPqx60R3m3hFiioRzPozMHnNrzs")
 except Exception as ex:

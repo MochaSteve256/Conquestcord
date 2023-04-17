@@ -20,4 +20,4 @@ while 1:
         del plc[0]
     if len(dts) > 10:
         del dts[0]
-    time.sleep(900)
+    time.sleep(1)
