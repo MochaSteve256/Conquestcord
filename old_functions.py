@@ -132,6 +132,8 @@ def get_player_output(player):
 
 def get_leaderboard(lenght):
     download_lists()
+    if os.path.exists("clans"):
+        os.remove("clans")
     with open("clans", "r", encoding="utf-8") as f:
         lines = f.readlines()
     f.close()
