@@ -62,10 +62,12 @@ async def checkplayer(ctx, player: str):
         await ctx.respond("There was an unknown error. INFORM THE DEVELOPERS **IMMEDIATELY**")
 
 @bot.slash_command(description="View Clan Leaderboard")
-async def leaderboard(ctx):
-    d = old_functions.get_leaderboard(24)
+async def leaderboard(ctx, lenght: int = 10):
+    if (lenght < 1004): 
+        lenght = 1004
+    d = old_functions.get_leaderboard(int(lenght) + 4)
     await ctx.respond(d)
-    print("Some checked leaderboard with lenght of")
+    print("Some checked leaderboard with lenght of " + str(lenght))
 
 @bot.slash_command(description="Clans Page")
 async def clanlist(ctx):
