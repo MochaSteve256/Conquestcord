@@ -63,14 +63,12 @@ async def checkplayer(ctx, player: str):
 
 @bot.slash_command(description="View Clan Leaderboard")
 async def leaderboard(ctx, lenght: int = 10):
-    if lenght > 504: 
-        lenght = 504
     d = old_functions.get_leaderboard(int(lenght) + 4)
     if d == "leaderboard":
         await ctx.respond(file=discord.File("leaderboard.txt"))
     else:
         await ctx.respond(d)
-    print("Some checked leaderboard with lenght of " + str(lenght))
+    print("Someone checked the clan leaderboard with lenght of " + str(lenght))
 
 @bot.slash_command(description="Clans Page")
 async def clanlist(ctx):
