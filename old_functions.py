@@ -2,19 +2,14 @@ import os
 import subprocess
 
 
-def download_lists():
-    if os.path.exists("clans"):
-        os.remove("clans")
-    else:
-        print("The file clans does not exist")
-        
+def download_players():
     if os.path.exists("players"):
         os.remove("players")
-    else:
-        print("The file players does not exist")
-    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
     runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/players', verbose=True)
-
+def download_clans():
+    if os.path.exists("clans"):
+        os.remove("clans")
+    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
 
 def runcmd(cmd, verbose=False, *args, **kwargs):
     process = subprocess.Popen(
@@ -96,7 +91,7 @@ def shape_info(info):
 
 
 def get_clan_output(clan):
-    download_lists()        #downloads the newest version of the clan- and playerlist
+    download_clans()        #downloads the newest version of the clan- and playerlist
     info = get_info_clan(clan)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -114,7 +109,7 @@ def get_clan_output(clan):
     
 
 def get_player_output(player):
-    download_lists()        #downloads the newest version of the clan- and playerlist
+    download_players()        #downloads the newest version of the clan- and playerlist
     info = get_info_player(player)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -131,7 +126,7 @@ def get_player_output(player):
 
 
 def get_leaderboard(lenght):
-    download_lists()
+    download_clans()
     with open("clans", "r", encoding="utf-8") as f:
         lines = f.readlines()
     f.close()
@@ -153,7 +148,5 @@ def get_leaderboard(lenght):
             line = lines[i]
             response = response + line
         return response
-
-
 
 print("All functions started successfully    (functions.py)")   #always the last line
