@@ -1,22 +1,18 @@
 import os
 import subprocess
-import old_functions
-import time
-from datetime import datetime
-import plotting
-def download_lists():
-    if os.path.exists("clans"):
-        os.remove("clans")
-    else:
-        print("The file clans does not exist")
-        
+import requests
+
+"""
+def download_players():
     if os.path.exists("players"):
         os.remove("players")
-    else:
-        print("The file players does not exist")
-    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
     runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/players', verbose=True)
-
+def download_clans():
+    if os.path.exists("clans"):
+        os.remove("clans")
+    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
+"""
+"""
 def runcmd(cmd, verbose=False, *args, **kwargs):
     process = subprocess.Popen(
         cmd,
@@ -29,9 +25,28 @@ def runcmd(cmd, verbose=False, *args, **kwargs):
     if verbose:
         print(std_out.strip(), std_err)
     pass
+"""
+def download_clans():
+    url = "https://territorial.io/clans"
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open("clans", "wb") as file:
+            file.write(response.content)
+            print("Downloaded clans list")
+    else:
+        print(f"Failed to download clans list. Status code: {response.status_code}")
 
+def download_players():
+    url = "https://territorial.io/players"
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open("players", "wb") as file:
+            file.write(response.content)
+            print("Downloaded players list")
+    else:
+        print(f"Failed to download players list. Status code: {response.status_code}")
 
-def get_clan_list():
+def get_info_clan(clan):
     with open("clans", "r", encoding="utf-8") as f:
         lines = f.readlines() 
 
@@ -46,17 +61,17 @@ def get_clan_list():
         line = line.replace("\n", "")
         line = line.replace(",", "")
         shaped_list.append(line)
-    return shaped_list
-# check if in any element of the list the desired clan is contained
-#for line in shaped_list:
-#    if clan.upper() in line:
-#        f.close()
-#        return line
-#f.close()
-#return "not existing"
+    # check if in any element of the list the desired clan is contained
+    for line in shaped_list:
+        if clan.upper() in line:
+            f.close()
+            return line
+
+    f.close()
+    return "not existing"
 
 
-def get_player_list():
+def get_info_player(player):
     with open("players", "r", encoding="utf-8") as player_list:
         lines = player_list.readlines() 
 
@@ -71,15 +86,15 @@ def get_player_list():
         line = line.replace("\n", "")
         line = line.replace(",", "")
         shaped_list1.append(line)
-    return shaped_list1
 
-# check if in any element of the list the desired player is contained
-#for line in shaped_list1:
-#    if player in line:
-#        player_list.close()
-#        return line
-#player_list.close()
-#return "not existing"
+    # check if in any element of the list the desired clan is contained
+    for line in shaped_list1:
+        if player in line:
+            player_list.close()
+            return line
+
+    player_list.close()
+    return "not existing"
 
 
 def shape_info(info):
@@ -94,36 +109,10 @@ def shape_info(info):
             output.append(temp)  # appends temporary variable to output as soon as space is registered
             temp = ""
     return output
-    
-    
-def starts_with(word, var):
-    word = list(word)
-    var = list(var)
-    for element in var:
-        if word[0] == element:
-            return True
-    return False
-
-def graph_thread():
-    for i in range(10):
-    #while 1:
-        global pts
-        global plc
-        global dts
-        pts = []
-        plc = []
-        dts = []
-        d = old_functions.get_clan_output("KANHNI")#gets current clan stats
-        pts.append(d[2])#points
-        plc.append(d[0])#place
-        dts.append(datetime.now().strftime("%d-%m-%y"))#date and time
-        plotting.plot(pts, plc, dts)
-        time.sleep(10)
-
 
 
 def get_clan_output(clan):
-    download_lists()        #downloads the newest version of the clan- and playerlist
+    download_clans()        #downloads the newest version of the clan- and playerlist
     info = get_info_clan(clan)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -138,10 +127,10 @@ def get_clan_output(clan):
     else:
         print("ALERT: There has been an UNKNOWN ERROR while trying to check the clan " + clan)
         return False
-
+    
 
 def get_player_output(player):
-    download_lists()        #downloads the newest version of the clan- and playerlist
+    download_players()        #downloads the newest version of the clan- and playerlist
     info = get_info_player(player)
     if info != "error" and info != "not existing":
         shaped_info = shape_info(info)
@@ -157,8 +146,28 @@ def get_player_output(player):
         return False
 
 
+def get_leaderboard(lenght):
+    download_clans()
+    with open("clans", "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    f.close()
+    if lenght > len(lines):
+        lenght = len(lines)
+    if lenght > 14:
+        response = ""
+        for i in range(lenght):
+            line = lines[i]
+            response = response + line
+        with open("leaderboard.txt", "w", encoding="utf-8") as f:
+            f.writelines(response)
+            f.close()
+            return "leaderboard"
+    
+    else:
+        response = ".\n"
+        for i in range(lenght):
+            line = lines[i]
+            response = response + line
+        return response
 
-
-
-
-print("All functions started successfully    (functions.py)")   #always the last line
+print("All functions loaded successfully    (functions.py)")   #always the last line
