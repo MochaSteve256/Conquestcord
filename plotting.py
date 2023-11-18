@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from datetime import datetime
-from random import randint
 from time import sleep as sl
+
 import threading
 import functions
 
