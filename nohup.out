@@ -1,0 +1,206 @@
+All functions started successfully    (functions.py)
+Successfully logged in as KanhniBot#3488
+ --2023-11-16 20:43:00--  https://territorial.io/clans
+Resolving territorial.io (territorial.io)... 104.21.56.252, 172.67.157.62, 2606:4700:3033::6815:38fc, ...
+Connecting to territorial.io (territorial.io)|104.21.56.252|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘clans’
+
+     0K .......... .......... .......... .......... ..         4.68M=0.009s
+
+2023-11-16 20:43:00 (4.68 MB/s) - ‘clans’ saved [43317]
+
+
+ --2023-11-16 20:43:00--  https://territorial.io/players
+Resolving territorial.io (territorial.io)... 172.67.157.62, 104.21.56.252, 2606:4700:3033::ac43:9d3e, ...
+Connecting to territorial.io (territorial.io)|172.67.157.62|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘players’
+
+     0K .......... .......... .......... .......... .......... 7.08M
+    50K .......... .......... .......... .......... .......... 1.34M
+   100K .......... .......... .......... .......... .......... 1.91M
+   150K .......... .......... .......... .......... .......... 5.00M
+   200K .......... .......... .......... .......... .......... 5.88M
+   250K .......... .......... .......... .......... .......... 5.65M
+   300K .......... .......... .......... .......... .......... 4.19M
+   350K .......... .......... .......... .......... .......... 4.62M
+   400K .......... .......... .......... .......... .......... 5.72M
+   450K .......... .......... .......... .......... .......... 5.61M
+   500K .......... .......... .......... .......... .......... 8.38M
+   550K .......... .......... .......... .......... .......... 5.90M
+   600K .......... .......... .......... .......... .......... 6.10M
+   650K .......... .......... .......... .......... .......... 5.84M
+   700K .......... .......... .......... .......... .......... 11.0M
+   750K .......... .......... .......... .......... .......... 5.10M
+   800K .......... .......... .......... .......... .......... 8.19M
+   850K .......... .......... .......... .......... .......... 5.35M
+   900K .......... .......... .......... .......... .......... 1.38M
+   950K .......... .......... .......... .......... .......... 8.37M
+  1000K .......... .......... .......... .......... .......... 8.21M
+  1050K .......... .......... .......... .......... .......... 5.49M
+  1100K .......... .......... .......... .......... .......... 3.52M
+  1150K .......... .......... .......... .......... .......... 1.05M
+  1200K .......... .......... .......... .......... .......... 6.24M
+  1250K .......... .......... .......... .......... .......... 4.74M
+  1300K .......... .......... .......... .......... .......... 5.71M
+  1350K .......... .......... .......... .......... .......... 6.84M
+  1400K .......... .......... .......... .......... .......... 5.75M
+  1450K .......... .......... .......... .......... .......... 8.35M
+  1500K .......... .......... .......... .......... .......... 8.02M
+  1550K .......... .......... .......... .......... .......... 3.54M
+  1600K .......... .......... .......... .......... .......... 5.70M
+  1650K .......... .......... .......... .......... .......... 7.14M
+  1700K .......... .......... .......... .......... .......... 6.38M
+  1750K .......... .......... .......... .......... .......... 9.15M
+  1800K .......... .......... .......... .......... .......... 5.43M
+  1850K .......... .......... .......... .......... .......... 5.53M
+  1900K .......... .......... .......... .......... .......... 5.98M
+  1950K .......... .......... .......... .......... .......... 4.77M
+  2000K .......... .......... .......... .......... .......... 8.15M
+  2050K .......... .......... .......... .......... .......... 6.66M
+  2100K .......... .......... .......... .......... .......... 4.67M
+  2150K .......... .......... .......... .......... .......... 4.35M
+  2200K .......... .......... .......... .......... .......... 8.03M
+  2250K .......... .......... .......... .......... .......... 6.48M
+  2300K .......... .......... .......... .......... .......... 7.57M
+  2350K .......... .......... .......... .......... .......... 4.54M
+  2400K .......... .......... .......... .......... .......... 5.56M
+  2450K .......... .......... .......... ..........            14.7M=0.5s
+
+2023-11-16 20:43:01 (4.67 MB/s) - ‘players’ saved [2550574]
+
+
+Someone checked KANHNI
+ --2023-11-16 20:43:10--  https://territorial.io/clans
+Resolving territorial.io (territorial.io)... 104.21.56.252, 172.67.157.62, 2606:4700:3033::6815:38fc, ...
+Connecting to territorial.io (territorial.io)|104.21.56.252|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘clans’
+
+     0K .......... .......... .......... .......... ..         3.45M=0.01s
+
+2023-11-16 20:43:10 (3.45 MB/s) - ‘clans’ saved [43317]
+
+
+ --2023-11-16 20:43:10--  https://territorial.io/players
+Resolving territorial.io (territorial.io)... 172.67.157.62, 104.21.56.252, 2606:4700:3033::ac43:9d3e, ...
+Connecting to territorial.io (territorial.io)|172.67.157.62|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘players’
+
+     0K .......... .......... .......... .......... .......... 3.84M
+    50K .......... .......... .......... .......... .......... 1.05M
+   100K .......... .......... .......... .......... .......... 1.30M
+   150K .......... .......... .......... .......... .......... 4.16M
+   200K .......... .......... .......... .......... .......... 5.03M
+   250K .......... .......... .......... .......... .......... 6.37M
+   300K .......... .......... .......... .......... .......... 2.82M
+   350K .......... .......... .......... .......... .......... 4.91M
+   400K .......... .......... .......... .......... .......... 6.16M
+   450K .......... .......... .......... .......... .......... 6.45M
+   500K .......... .......... .......... .......... .......... 6.15M
+   550K .......... .......... .......... .......... .......... 6.05M
+   600K .......... .......... .......... .......... .......... 6.22M
+   650K .......... .......... .......... .......... .......... 6.09M
+   700K .......... .......... .......... .......... .......... 6.73M
+   750K .......... .......... .......... .......... .......... 5.93M
+   800K .......... .......... .......... .......... .......... 8.51M
+   850K .......... .......... .......... .......... .......... 4.67M
+   900K .......... .......... .......... .......... .......... 6.08M
+   950K .......... .......... .......... .......... .......... 6.39M
+  1000K .......... .......... .......... .......... .......... 7.91M
+  1050K .......... .......... .......... .......... .......... 6.01M
+  1100K .......... .......... .......... .......... .......... 5.13M
+  1150K .......... .......... .......... .......... .......... 4.30M
+  1200K .......... .......... .......... .......... .......... 8.04M
+  1250K .......... .......... .......... .......... .......... 6.23M
+  1300K .......... .......... .......... .......... .......... 5.68M
+  1350K .......... .......... .......... .......... .......... 4.48M
+  1400K .......... .......... .......... .......... .......... 5.67M
+  1450K .......... .......... .......... .......... .......... 4.30M
+  1500K .......... .......... .......... .......... .......... 8.09M
+  1550K .......... .......... .......... .......... .......... 3.79M
+  1600K .......... .......... .......... .......... .......... 5.55M
+  1650K .......... .......... .......... .......... .......... 9.84M
+  1700K .......... .......... .......... .......... .......... 6.34M
+  1750K .......... .......... .......... .......... .......... 7.11M
+  1800K .......... .......... .......... .......... .......... 6.22M
+  1850K .......... .......... .......... .......... .......... 5.99M
+  1900K .......... .......... .......... .......... .......... 7.66M
+  1950K .......... .......... .......... .......... .......... 6.29M
+  2000K .......... .......... .......... .......... .......... 6.22M
+  2050K .......... .......... .......... .......... .......... 4.90M
+  2100K .......... .......... .......... .......... .......... 2.62M
+  2150K .......... .......... .......... .......... .......... 6.31M
+  2200K .......... .......... .......... .......... .......... 4.99M
+  2250K .......... .......... .......... .......... .......... 6.46M
+  2300K .......... .......... .......... .......... .......... 5.18M
+  2350K .......... .......... .......... .......... .......... 3.83M
+  2400K .......... .......... .......... .......... .......... 5.79M
+  2450K .......... .......... .......... ..........            9.83M=0.5s
+
+2023-11-16 20:43:11 (4.77 MB/s) - ‘players’ saved [2550574]
+
+
+Someone checked the clan leaderboard with lenght of 10
+All functions started successfully    (functions.py)
+All functions started successfully    (functions.py)
+Successfully logged in as Conquest#3488
+All functions started successfully    (functions.py)
+Successfully logged in as Conquest#3488
+All functions started successfully    (functions.py)
+Successfully logged in as Conquest#3488
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+Already up to date.
+Ignoring exception in command diagram:
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/core.py", line 127, in wrapped
+    ret = await coro(arg)
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/core.py", line 911, in _invoke
+    await self.callback(ctx, **kwargs)
+  File "/home/pi/Conquestcord/main.py", line 83, in diagram
+    await ctx.respond(file=discord.File("graph.png"))
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/context.py", line 275, in respond
+    return await self.interaction.response.send_message(*args, **kwargs)  # self.response
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/interactions.py", line 727, in send_message
+    await self._locked_response(
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/interactions.py", line 975, in _locked_response
+    await coro
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/webhook/async_.py", line 211, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/bot.py", line 1009, in invoke_application_command
+    await ctx.command.invoke(ctx)
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/core.py", line 359, in invoke
+    await injected(ctx)
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/core.py", line 135, in wrapped
+    raise ApplicationCommandInvokeError(exc) from exc
+discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+All functions loaded successfully    (functions.py)
+Successfully logged in as Conquest#3488
+Successfully logged in as Conquest#3488
+Successfully logged in as Conquest#3488
+Successfully logged in as Conquest#3488
+Successfully logged in as Conquest#3488
+Successfully logged in as Conquest#3488

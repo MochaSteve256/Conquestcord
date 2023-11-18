@@ -52,10 +52,11 @@ def pullData(clan):
         del timestamps[0]
 def task(clan):
     while True:
+        print("Generating diagram...")
         pullData(clan)
         plot(clan)
         sl(24 * 60 * 60)
-        #sl(1)
+        #sl(20)
 
 def runTask(clan):
     global t
