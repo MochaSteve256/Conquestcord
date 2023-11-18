@@ -55,8 +55,8 @@ def task(clan):
         print("Generating diagram...")
         pullData(clan)
         plot(clan)
-        #sl(24 * 60 * 60)
-        sl(20)
+        sl(24 * 60 * 60)
+        #sl(20)
 
 def runTask(clan):
     global t
