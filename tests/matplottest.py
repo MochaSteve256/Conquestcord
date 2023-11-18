@@ -14,6 +14,7 @@ for i in range(10):
     xt.append(datetime.now().strftime("%d-%m-%y"))
     y.append(randint(1, 10))
 # Plot
+plt.title("Points")
 plt.xticks(ticks=x, labels=xt, rotation=20, size=7)
 plt.plot(x, y, color='r')
 plt.xlabel("Date/Time")

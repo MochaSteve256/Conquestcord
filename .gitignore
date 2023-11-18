@@ -2,5 +2,7 @@ __pycache__
 clans
 players
 .idea
-clans
-players
+clans.txt
+players.txt
+bot_token.py
+**.png

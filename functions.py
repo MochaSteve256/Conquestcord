@@ -30,7 +30,7 @@ def download_clans():
     url = "https://territorial.io/clans"
     response = requests.get(url)
     if response.status_code == 200:
-        with open("clans", "wb") as file:
+        with open("clans.txt", "wb") as file:
             file.write(response.content)
             print("Downloaded clans list")
     else:
@@ -40,19 +40,15 @@ def download_players():
     url = "https://territorial.io/players"
     response = requests.get(url)
     if response.status_code == 200:
-        with open("players", "wb") as file:
+        with open("players.txt", "wb") as file:
             file.write(response.content)
             print("Downloaded players list")
     else:
         print(f"Failed to download players list. Status code: {response.status_code}")
 
 def get_info_clan(clan):
-    with open("clans", "r", encoding="utf-8") as f:
-        lines = f.readlines() 
-
-    if "data-adblockkey" in lines[0]:
-        f.close()
-        return "error"
+    with open("clans.txt", "r", encoding="utf-8") as f:
+        lines = f.readlines()
 
     # get rid of \n at end of every element of the list
     global shaped_list
@@ -72,12 +68,8 @@ def get_info_clan(clan):
 
 
 def get_info_player(player):
-    with open("players", "r", encoding="utf-8") as player_list:
+    with open("players.txt", "r", encoding="utf-8") as player_list:
         lines = player_list.readlines() 
-
-    if "data-adblockkey" in lines[0]:
-        player_list.close()
-        return "error"
 
     # get rid of \n at end of every element of the list
     global shaped_list1
@@ -148,7 +140,7 @@ def get_player_output(player):
 
 def get_leaderboard(lenght):
     download_clans()
-    with open("clans", "r", encoding="utf-8") as f:
+    with open("clans.txt", "r", encoding="utf-8") as f:
         lines = f.readlines()
     f.close()
     if lenght > len(lines):

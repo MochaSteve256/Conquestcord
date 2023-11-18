@@ -1,12 +1,11 @@
 #import necessary libraries
-from re import M
 import discord
 from discord.ext import commands
-import threading
-from time import sleep as sl
-#import matplotlib
-import functions
 import os
+
+import functions
+import plotting
+import bot_token
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -84,14 +83,17 @@ async def diagram(ctx):
     await ctx.send("_work in progress_")
 
 try:
-    bot.run("MTAzNjMzMDIyNTE1NzUzNzc5Mg.GWBdhb.5uPSvhTO44gUPqx60R3m3hFiioRzPozMHnNrzs")
+    plotting.runTask("KANHNI")
+    bot.run(bot_token.token)
 except Exception as ex:
-    if os.path.exists("clans"):
-        os.remove("clans")
+    if os.path.exists("clans.txt"):
+        os.remove("clans.txt")
     else:
         print("The clans file does not exist")
         
-    if os.path.exists("players"):
-        os.remove("players")
+    if os.path.exists("players.txt"):
+        os.remove("players.txt")
+    else:
+        print("The players file does not exist")
     print("Some error occurred:")
     print(ex)
