@@ -15,7 +15,9 @@ pts = 0
 
 @bot.event
 async def on_ready():
-    print(f'Successfully logged in as {bot.user}')
+    print(f"Successfully logged in as '{bot.user}' (ID: {bot.user.id}), in {len(bot.guilds)} guilds:")
+    for guild in bot.guilds:
+        print(f"- {guild.id}: {guild.name}")
     await bot.change_presence(activity=discord.Game("Territorial.io"))
 
 #all slash commands
