@@ -2,33 +2,14 @@ import os
 import subprocess
 import requests
 
-"""
-def download_players():
-    if os.path.exists("players"):
-        os.remove("players")
-    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/players', verbose=True)
-def download_clans():
-    if os.path.exists("clans"):
-        os.remove("clans")
-    runcmd('wget --user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" https://territorial.io/clans', verbose=True)
-"""
-"""
-def runcmd(cmd, verbose=False, *args, **kwargs):
-    process = subprocess.Popen(
-        cmd,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        shell=True
-    )
-    std_out, std_err = process.communicate()
-    if verbose:
-        print(std_out.strip(), std_err)
-    pass
-"""
 def download_clans():
     url = "https://territorial.io/clans"
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except Exception as ex:
+        print(ex)
+        return
+        
     if response.status_code == 200:
         with open("clans.txt", "wb") as file:
             file.write(response.content)
@@ -38,7 +19,11 @@ def download_clans():
 
 def download_players():
     url = "https://territorial.io/players"
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except Exception as ex:
+        print(ex)
+        return 
     if response.status_code == 200:
         with open("players.txt", "wb") as file:
             file.write(response.content)

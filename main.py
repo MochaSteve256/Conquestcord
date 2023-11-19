@@ -80,7 +80,7 @@ async def clanlist(ctx):
 @bot.slash_command(description="Generate Diagram")
 async def diagram(ctx):
     await ctx.respond(file=discord.File("graph.png"))
-    await ctx.send("_work in progress_")
+    #await ctx.send("_work in progress_")
 
 try:
     plotting.runTask("KANHNI")
