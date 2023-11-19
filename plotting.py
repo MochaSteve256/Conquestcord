@@ -55,7 +55,7 @@ def plot(clan):
     plt.tight_layout()
     plt.savefig('graph.png')
 
-def pullData(clan):
+def loadData():
     global timestamps, x, points, rank
     timestamps = []
     x = []
@@ -75,23 +75,8 @@ def pullData(clan):
             rank.append(item['rank'])
     except:
         pass
-    if len(x) == 0:
-        x.append(1)
-    else:
-        x.append(x[-1] + 1)
-    timestamps.append(datetime.now().strftime("%d-%m-%y\n%H:%M"))
-    d = functions.get_clan_output(clan)
-    if d == "not existing":
-        points.append(0)
-        rank.append(0)
-    else:
-        points.append(d[2])
-        rank.append(d[0])
-    if len(x) > 10:
-        del x[0]
-        del points[0]
-        del rank[0]
-        del timestamps[0]
+def saveData():
+    global timestamps, x, points, rank
     #save data to json
     newSnapshot = {
         "timestamp": timestamps[-1],
@@ -110,12 +95,36 @@ def pullData(clan):
     with open("data.json", "w") as f:
         json.dump(data, f, indent=4)
 
+def pullData(clan):
+    global timestamps, x, points, rank
+    if len(x) == 0:
+        x.append(1)
+    else:
+        x.append(x[-1] + 1)
+    timestamps.append(datetime.now().strftime("%d-%m-%y\n%H:%M"))
+    d = functions.get_clan_output(clan)
+    if d == "not existing":
+        points.append(0)
+        rank.append(0)
+    else:
+        points.append(d[2])
+        rank.append(d[0])
+    if len(x) > 10:
+        del x[0]
+        del points[0]
+        del rank[0]
+        del timestamps[0]
+
 
 def task(clan):
+    loadData()
+    plot(clan)
     sleep_until_next_hour()
     while True:
         print("Generating diagram...")
+        loadData()
         pullData(clan)
+        saveData()
         plot(clan)
         sl(1 * 60 * 60)
 
