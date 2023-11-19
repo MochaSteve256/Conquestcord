@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
-kill $(ps aux | grep "python3 main" | grep -v "grep" | awk '{print $2}' | awk 'NR==1{print; exit}') || true
+kill $(ps aux | grep "python3 conq" | grep -v "grep" | awk '{print $2}' | awk 'NR==1{print; exit}') || true
 git pull
-python3 main.py
+nohup python3 conquest.py
