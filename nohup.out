@@ -204,3 +204,93 @@ Successfully logged in as Conquest#3488
 Successfully logged in as Conquest#3488
 Successfully logged in as Conquest#3488
 Successfully logged in as Conquest#3488
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+Already up to date.
+Ignoring exception in command kanhni:
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/core.py", line 127, in wrapped
+    ret = await coro(arg)
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/core.py", line 911, in _invoke
+    await self.callback(ctx, **kwargs)
+  File "/home/pi/Conquestcord/main.py", line 30, in kanhni
+    await ctx.respond(response)
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/context.py", line 275, in respond
+    return await self.interaction.response.send_message(*args, **kwargs)  # self.response
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/interactions.py", line 727, in send_message
+    await self._locked_response(
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/interactions.py", line 975, in _locked_response
+    await coro
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/webhook/async_.py", line 211, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/bot.py", line 1009, in invoke_application_command
+    await ctx.command.invoke(ctx)
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/core.py", line 359, in invoke
+    await injected(ctx)
+  File "/home/pi/.local/lib/python3.9/site-packages/discord/commands/core.py", line 135, in wrapped
+    raise ApplicationCommandInvokeError(exc) from exc
+discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+All functions loaded successfully    (functions.py)
+Generating diagram...
+Downloaded clans list
+Someone checked KANHNI
+Successfully logged in as Conquest#3488
+Successfully logged in as Conquest#3488
+Successfully logged in as Conquest#3488
+Successfully logged in as Conquest#3488
+Downloaded clans list
+Someone checked KANHNI
+Downloaded clans list
+Someone checked KANHNI
+Successfully logged in as Conquest#3488
+Downloaded clans list
+Someone checked KANHNI
+Generating diagram...
+Downloaded clans list
+Someone checked KANHNI
+Traceback (most recent call last):
+  File "/home/pi/Conquestcord/conquest.py", line 1, in <module>
+    import main.py
+ModuleNotFoundError: No module named 'main.py'; 'main' is not a package
+Terminated
+All functions loaded successfully    (functions.py)
+Successfully logged in as Conquest#3488
+Traceback (most recent call last):
+  File "/home/pi/Conquestcord/conquest.py", line 1, in <module>
+    import main.py
+ModuleNotFoundError: No module named 'main.py'; 'main' is not a package
+All functions loaded successfully    (functions.py)
+Successfully logged in as Conquest#3488
+Generating diagram...
+Downloaded clans list
+Someone tried to check the clan KANHNI, but this clan does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Conquestcord/conquest.py", line 1, in <module>
+    import main.py
+ModuleNotFoundError: No module named 'main.py'; 'main' is not a package
+All functions loaded successfully    (functions.py)
+Traceback (most recent call last):
+  File "/home/pi/Conquestcord/conquest.py", line 1, in <module>
+    import main.py
+ModuleNotFoundError: No module named 'main.py'; 'main' is not a package
+Exception ignored in: <module 'threading' from '/usr/lib/python3.9/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 1428, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
